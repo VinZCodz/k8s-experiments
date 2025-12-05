@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: myapp-deployment
+  labels:
+    app: frontend
+
+spec:
+  replicas: 3
+  selector:
+    matchLables:
+      tier: frontend
+
+  templete:
+    metadata:
+      name: nginx
+      labels:
+        tier: frontend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+
+
+# CRUD in deployment
+
+# kubectl create -f deployment-definition.yml
+# kubectl describe deployment frontend-deployment
+
+# kubectl get deployment
+
+# kubectl replace -f myapp-deployment
+
+# kubectl delete deployment myapp-deployment
