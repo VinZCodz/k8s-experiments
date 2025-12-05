@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+
+metadata: 
+  name: webapp-service
+  namespace: default
+
+spec:
+  selector:
+    name: simple-webapp # if multiple pods exists with this label(RelplicaSet), then performs Random load balance with session affinity for these pods.
+
+  type: NodePort # ClusterIP for internal service
+
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080 # removed for ClusterIP service
+
+
+
+# CRUD in Service:
+
+# kubectl create -f service-definition.yaml
+# kubectl describe service webapp-service
+
+# kubectl get service
+# kubectl get service -o wide
+
+# kubectl apply -f service-definition-1.yaml
+
+# kubectl delete service webapp-service
