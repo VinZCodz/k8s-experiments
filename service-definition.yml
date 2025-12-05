@@ -7,7 +7,7 @@ metadata:
 
 spec:
   selector:
-    name: simple-webapp # if multiple pods exists with this label(RelplicaSet), then performs Random load balance with session affinity for these pods.
+    name: simple-webapp # if multiple pods exists with this label(ReplicaSet), then performs Random load balance with session affinity for these pods.
 
   type: NodePort # ClusterIP for internal service
 
@@ -29,3 +29,4 @@ spec:
 # kubectl apply -f service-definition-1.yaml
 
 # kubectl delete service webapp-service
+
