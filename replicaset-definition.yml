@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+
+metadata:
+  name: my-replicaset
+  labels:
+    app: my-app
+    type: front-end
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+
+  templete:
+
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+        tier: frontend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+
+
+# CRUD on ReplicaSet:
+
+# kubectl create -f replicaset-definition.yml
+# kubectl describe replicaset new-replica-set
+
+# kubectl get replicaset
+
+# kubectl edit replicaset my-replicaset
+# kubectl replace -f replicaset-definition.yml
+
+# kubectl delete replicaset my-replicaset
