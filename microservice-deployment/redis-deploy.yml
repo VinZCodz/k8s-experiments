@@ -2,8 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: redis-deployment
+  name: redis-deploy
   namespace: default
+  labels:
+    name: redis-deploy
+    app: voting-app
 
 spec:
   replicas: 2
