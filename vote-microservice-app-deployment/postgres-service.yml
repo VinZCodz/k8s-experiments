@@ -3,7 +3,7 @@ kind: Service
 
 metadata:
   name: db
-  namespace: default
+  namespace: vote
   labels:
     name: postgres-service
     app: voting-app
@@ -13,7 +13,7 @@ spec:
     name: postgres-pod
     app: voting-app
 
-  type: ClusterIP
+  type: ClusterIP #Optional. Coz default is ClusterIP if not mentioned.
 
   ports:
     - port: 5432

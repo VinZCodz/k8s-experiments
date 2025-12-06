@@ -23,7 +23,7 @@ spec:
           image: nginx
 
 
-# CRUD in deployment
+# CRUD on k8s Deployment object 
 
 # kubectl create -f deployment-definition.yml
 # kubectl describe deployment frontend-deployment

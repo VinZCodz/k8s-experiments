@@ -9,7 +9,7 @@ spec:
     - name: redis
       image: redis
 
-# CRUD on Pod:
+# CRUD on k8s Pod object 
 
 # kubectl create -f pod-definition-redis.yml
 # kubectl describe pod redis

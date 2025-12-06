@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: worker-app-deploy
-  namespace: default
+  name: worker
+  namespace: vote
   labels:
     name: worker-app-deploy
     app: voting-app
@@ -26,4 +26,4 @@ spec:
     spec:
       containers:
         - name: worker-app
-          image: kodekloud/examplevotingapp_worker:v1
+          image: dockersamples/examplevotingapp_worker

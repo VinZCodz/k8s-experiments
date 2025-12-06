@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: redis
+  namespace: vote
+  labels:
+    name: redis-deploy
+    app: voting-app
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: redis-pod
+      app: voting-app
+
+  template:
+
+    metadata:
+      name: redis-pod
+      labels:
+        name: redis-pod
+        app: voting-app
+
+    spec:
+      containers:
+        - name: redis
+          image: redis:alpine
+
+          volumeMounts:
+            - name: redis-data
+              mountPath: /data
+          
+          ports: 
+            - containerPort: 6379
+      
+      volumes:
+        - name: redis-data
+          emptyDir: {}
+          # A temporary directory that shares a pod's lifetime
+          # An emptyDir volume in Kubernetes is an ephemeral storage solution, meaning its data is tied to the lifecycle of the Pod it is associated with. When a Pod is created, an emptyDir volume is created on the "Node" where the Pod is scheduled, and when the Pod is deleted or moved to another Node, the data in the emptyDir is permanently lost.
+          # Typically used in test and dev environments.

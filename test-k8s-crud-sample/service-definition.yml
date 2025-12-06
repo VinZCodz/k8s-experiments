@@ -18,7 +18,7 @@ spec:
 
 
 
-# CRUD in Service:
+# CRUD on k8s Service object 
 
 # kubectl create -f service-definition.yaml
 # kubectl describe service webapp-service

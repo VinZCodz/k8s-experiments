@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+
+metadata:
+  name: vote
+  labels:
+    name: vote-namespace
+    app: voting-app
+
+
+# Switch/Set context for CLI execution via:
+# kubectl config set-context --current --namespace=<namespace-name>
