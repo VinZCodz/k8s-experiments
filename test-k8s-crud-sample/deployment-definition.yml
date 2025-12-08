@@ -9,10 +9,10 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchLables:
+    matchLabels:
       tier: frontend
 
-  templete:
+  template:
     metadata:
       name: nginx
       labels:

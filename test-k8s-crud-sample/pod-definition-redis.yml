@@ -14,7 +14,10 @@ spec:
 # kubectl create -f pod-definition-redis.yml
 # kubectl describe pod redis
 
+# kubectl get all
 # kubectl get pod
+# kubectl get po
+# kubectl get po -o yaml
 
 # kubectl apply -f pod-definition-redis.yml
 

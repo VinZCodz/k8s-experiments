@@ -3,7 +3,7 @@ kind: ReplicaSet
 
 metadata:
   name: my-replicaset
-  labels:
+  labels:      # used to filter by kubectl, say filter via type: front-end
     app: my-app
     type: front-end
 
@@ -13,7 +13,7 @@ spec:
     matchLabels:
       tier: frontend
 
-  templete:
+  template:
 
     metadata:
       name: nginx
@@ -32,6 +32,7 @@ spec:
 # kubectl describe replicaset new-replica-set
 
 # kubectl get replicaset
+# kubectl get rs
 
 # kubectl edit replicaset my-replicaset
 # kubectl replace -f replicaset-definition.yml
