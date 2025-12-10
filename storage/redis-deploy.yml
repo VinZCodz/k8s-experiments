@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: redis
+  namespace: default
+  labels:
+    name: redis-deploy
+    app: voting-app
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: redis-pod
+      app: voting-app
+
+  template:
+
+    metadata:
+      name: redis-pod
+      labels:
+        name: redis-pod
+        app: voting-app
+
+    spec:
+      containers:
+        - name: redis
+          image: redis:alpine
+
+          volumeMounts:
+            - name: pv-test
+              mountPath: /data/redis
+          
+          ports: 
+            - containerPort: 6379
+      
+      volumes:
+        - name: pv-test
+          persistentVolumeClaim:
+            claimName: pvc-test
+          
