@@ -1,0 +1,17 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongService
+
+metadata:
+  name: postgresql-service
+  annotations:
+    kubernetes.io/ingress.class: kong
+
+spec:
+  routes:
+  - name: postgresql-route
+    paths:
+    - /postgres
+
+  upstream:
+    name: postgresql-db-service
+    port: 5432
