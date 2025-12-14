@@ -26,8 +26,10 @@ spec:
             - name: postgresql-db-disk
               mountPath: /data
           env:
+            - name: POSTGRES_USERNAME
+              value: test
             - name: POSTGRES_PASSWORD
-              value: testpassword
+              value: test
             - name: PGDATA
               value: /data/pgdata
 
