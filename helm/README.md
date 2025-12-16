@@ -1,3 +1,7 @@
+# What is Helm?
+
+<img width="1773" height="845" alt="image" src="https://github.com/user-attachments/assets/95408a74-00e3-41e3-95d8-8de0019e74ed" />
+
 # Getting the local/remote charts.
 
 - Help
@@ -12,6 +16,8 @@ helm create -h
 helm create [CHART_NAME]
 helm create sample_chart
 ```
+
+<img width="656" height="300" alt="image" src="https://github.com/user-attachments/assets/08b3f05d-ae36-43dd-b1b6-1d1c4036aadb" />****
 
 - Adds a chart repository to your Helm configuration, allowing you to search and install charts from it. 
 ```
@@ -31,6 +37,8 @@ helm pull [REPO_NAME]/[CHART_NAME] --untar
 helm pull bitnami/mysql --untar
 helm pull https://example.com/charts/chartname-1.2.3.tgz
 ```
+# How Helm Works?
+<img width="604" height="465" alt="image" src="https://github.com/user-attachments/assets/49772351-79d2-41d4-a99d-12219e4f38c7" />
 
 # CRUD on helm release.
 
@@ -47,6 +55,7 @@ helm lint .
 helm install [RELEASE_NAME] [CHART_NAME] 
 helm install my-nginx bitnami/nginx
 ```
+<img width="849" height="329" alt="image" src="https://github.com/user-attachments/assets/5bc1fcde-60cc-4fee-8089-bf283ea61849" />
 
 ### Read the release in the cluster
 - Get a specific release or Lists all installed releases in the specified namespace
@@ -91,3 +100,6 @@ helm uninstall my-nginx
 ```
 helm uninstall [RELEASE_NAME] --keep-history
 ```
+# Final difference on deploying a single micro service? 
+
+<img width="744" height="435" alt="image" src="https://github.com/user-attachments/assets/d281bc90-468c-4f0c-8e54-b7f084278ee8" />
