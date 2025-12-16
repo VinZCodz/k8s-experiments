@@ -1,5 +1,5 @@
 # What is Helm?
-
+A bundler or a package manager for k8s objects.
 <img width="1773" height="845" alt="image" src="https://github.com/user-attachments/assets/95408a74-00e3-41e3-95d8-8de0019e74ed" />
 
 # Getting the local/remote charts.
